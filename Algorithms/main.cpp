@@ -19,7 +19,7 @@ int main()
 
     while (count < loop)
     {
-        seque_a.push_back(seque_a[count - 1]*seque_a[count - 1] - 1);
+        seque_a.push_back(-seque_a[count - 1]*seque_a[count - 1]*seque_a[count - 1] - 3);
         ++count;
     }
     /// Made a simple variable vector with differentiable members.
@@ -70,6 +70,20 @@ int main()
 
     std::cout << '[';
     std::for_each(seque_c.begin(), seque_c.end(), my_cout);
+    std::cout << "]\n";
+
+    /// Sorting part of a vector
+    std::sort(seque_b.begin() + 2, seque_b.end() - 2);
+
+    std::cout << '{';
+    std::for_each(seque_b.begin(), seque_b.end(), my_cout);
+    std::cout << "}\n";
+
+    /// Sorting the whole vector
+    std::sort(seque_b.begin(), seque_b.end());
+
+    std::cout << '[';
+    std::for_each(seque_b.begin(), seque_b.end(), my_cout);
     std::cout << "]\n";
 
     return 0;
