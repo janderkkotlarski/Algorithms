@@ -1,3 +1,3 @@
 # Algorithms
 
-Descriptions of algorithm use.
+Examples of algorithm use.
