@@ -29,7 +29,9 @@ int main()
 
     /// The for_each algorithm: (start position, end position, function for the members)
     std::cout << '[';
-    std::for_each(seque_a.begin(), seque_a.end(), my_cout);
+    std::for_each(std::begin(seque_a),
+                  std::end(seque_a),
+                  [](int& i) { ++i; });
     std::cout << "]\n";
 
     /// The range based for loop
