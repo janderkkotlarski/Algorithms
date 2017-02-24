@@ -5,7 +5,7 @@ CONFIG -= qt
 
 SOURCES += main.cpp \
 
-QMAKE_CXXFLAGS += -std=c++14 -Wall -Wextra
+QMAKE_CXXFLAGS += -std=c++11 -Wall -Wextra
 
 INCLUDEPATH += D:\SFML-2.4.0\include
 

@@ -31,7 +31,7 @@ int main()
     std::cout << '[';
     std::for_each(std::begin(seque_a),
                   std::end(seque_a),
-                  [](int& i) { ++i; });
+                  [](int i) { std::cout << i << ' '; });
     std::cout << "]\n";
 
     /// The range based for loop
