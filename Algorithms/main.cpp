@@ -31,7 +31,7 @@ int main()
     std::cout << '[';
     std::for_each(std::begin(seque_a),
                   std::end(seque_a),
-                  [](int i) { std::cout << i << ' '; });
+                  [](const int i) { std::cout << i << ' '; });
     std::cout << "]\n";
 
     /// The range based for loop
@@ -50,7 +50,9 @@ int main()
     /// Please initialize your simple variable vectors if possible.
 
     std::cout << '{';
-    std::for_each(seque_b.begin(), seque_b.end(), my_cout);
+    std::for_each(std::begin(seque_b),
+                  std::end(seque_b),
+                  [](const int i) { std::cout << i << ' '; });
     std::cout << "}\n";
 
     /// Full copying of a vector to another vector of the same size
@@ -58,34 +60,44 @@ int main()
     /// This can be done for smaller ranges and with different positions.
 
     std::cout << '[';
-    std::for_each(seque_b.begin(), seque_b.end(), my_cout);
+    std::for_each(std::begin(seque_b),
+                  std::end(seque_b),
+                  [](const int i) { std::cout << i << ' '; });
     std::cout << "]\n";
 
     std::vector <int> seque_c(7, 0);
 
     std::cout << '{';
-    std::for_each(seque_c.begin(), seque_c.end(), my_cout);
+    std::for_each(std::begin(seque_c),
+                  std::end(seque_c),
+                  [](const int i) { std::cout << i << ' '; });
     std::cout << "}\n";
 
     /// Partial copying, would be a pain with a variable based for loop.
-    std::copy(seque_b.begin() + 2, seque_b.begin() + 5, seque_c.begin() + 1);
+    std::copy(std::begin(seque_b) + 2, std::begin(seque_b) + 5, std::begin(seque_c) + 1);
 
     std::cout << '[';
-    std::for_each(seque_c.begin(), seque_c.end(), my_cout);
+    std::for_each(std::begin(seque_c),
+                  std::end(seque_c),
+                  [](const int i) { std::cout << i << ' '; });
     std::cout << "]\n";
 
     /// Sorting part of a vector
-    std::sort(seque_b.begin() + 2, seque_b.end() - 2);
+    std::sort(std::begin(seque_b) + 2, std::end(seque_b) - 2);
 
     std::cout << '{';
-    std::for_each(seque_b.begin(), seque_b.end(), my_cout);
+    std::for_each(std::begin(seque_b),
+                  std::end(seque_b),
+                  [](const int i) { std::cout << i << ' '; });
     std::cout << "}\n";
 
     /// Sorting the whole vector
-    std::sort(seque_b.begin(), seque_b.end());
+    std::sort(std::begin(seque_b), std::end(seque_b));
 
     std::cout << '[';
-    std::for_each(seque_b.begin(), seque_b.end(), my_cout);
+    std::for_each(std::begin(seque_b),
+                  std::end(seque_b),
+                  [](const int i) { std::cout << i << ' '; });
     std::cout << "]\n";
 
     return 0;
